@@ -1,0 +1,110 @@
+
+
+#Data Preprocessing
+
+Generally refers to the addition, deletion or transformation of training dataset.  
+Transformations of the data to reduce the impact of data skewness or outliers can lead to significant improvemtns in performance
+
+Feature Extraction is one empirical technique to creating surrogate variables that are combinations of multiple predictors. 
+
+Its also determined by the type of model being used.
+
+Feature Engineering : How the predictors are encoded. ie sometimes combination of multiple predictors can sometimes be more effective (feature extraction could be a part of this)
+
+For an example, lets say there is a date in the data. It can be used in different ways
+  1) Number of days since/from the date
+  2) Isolating the day month and year etc
+
+Some encodings may be optimal for some models and poor for others.
+
+Encodings also depends on the relationship between predictor and target. ie If some month shows higher success rates than others then the encoding based on the month is preferable
+
+So "which feature engineering methods are best?" is that it depends on the model being used and the true relationship with the outcome.
+
+Data Transformation : why it is required?
+  Because of strict requirements of some modelling methods, ie center and scale for a common scale.
+  Creating a good model could be difficult due to specific characterstics of the data ie outliers.
+--> Data Transformation  of Individual Predictors.
+
+- Centering and scaling : 
+  Genrally used to improve the numerical stability of some calcuations.
+  Cons : Loss of interpretability as data is no longer in original unit.
+
+- Transformations to resolve skewness:
+  Generally used are Log, square root, inverse transformations.
+  Alternatively, statistical methods can be used to empirically identify an appropriate transformation. ie Box and Cox method.
+  
+  Box and Cox proposes a family of transformations using a parameter lambda.
+  
+      x = (x^lambda - 1) / lambda if lambda !=0 else log(x)
+      
+  you can see if lambda = 2 than its square tranformation. =0.5 then quare root etc.
+  
+  lambda is estimated from training data, using maximum likelhood estimation.
+  
+--> Data Transformation  of Multiple Predictors.
+    Of primary importance to resolve outliers and reduce the dimesnions of the data.
+
+  - Transformations to resolve outliers.
+    Outliers : 
+      * Gerenally defined as samples that are exceptionally far from the mainstream data. 
+      * There are some statistical definition but always with assumptions. Even with thorough understanding of the data, outliers are hard to define.
+      * With one or more outliers are suspected to be outliers, its to be validated ptoperly before removing that sample or changing value, especially when
+        the sample size is small.
+      * There are models which are insensetive to outliers i.e. Tree based classification, SVM for classification.
+      
+      
+      Learn some outlier removal techniques : Spatial sign
+      
+      
+  - Data Reduction and feature extraction:
+    These methods reduce the data by generating smaller set of predictors that seek to capture majority of information in the origincal variable.
+    These methods is often called Feature extraction.
+    
+    PCA : Principal component analysis.
+    
+    PCA must be used with understanding and care : (caveat)
+      * PCA could be senstive to distributional differences and scales of preditcors. So its always recommended to transform skewed predictors and then center and scale.
+      * Its unsuperwised technique, If the predictive relationship between the predictors and response is no connected to predictors variability, then the
+        derived PCs will not provide a suitable relationship with the response. Instead we can use PLS.
+        
+    PLS : Partial least square (supervised technique)  
+    
+  - Dealing with Missing values : 
+      Foremost question : Why the values are missing?
+        If the pattern of missing data is related to the outcome. This is called "informative missingness", and it can induce a significant bias in the model.
+        ie for a drug test, if the drug is very ineffective, the patient may be likely to miss doctor's' visit. 
+        Customer ratings, people are more compelled to rate a product when they have strong opinions. So could be lot of missings in middle value.
+        
+      Also, missing data should not be confused with 'censored data'.
+      Censored data :  where the exact value is missing but something is known about its value. could be a hint about an interval or something.
+      ie A company that rents movie disks use the duration that a customer has kept a movie in thier models. If a customer has not returned the disks yet, we do 
+      not know the actual time stamp, only that it is as least as long as the current duration.
+      For laboratary measurement, some instances can not be mesaured below thier limit of detection. In such cases, we know that smaller than the limit but was not
+      precisely measured.
+      
+      How to treat censored data?
+        Use censored value as observed value.
+      ie when a sample has a value below the limit of detection, the actual limit can be used in place of the real value, it is also common to use a random number 
+      between zero and the limit of detection.
+      
+        
+      
+      
+
+    
+      
+
+  
+
+
+
+
+
+
+
+
+
+
+
+

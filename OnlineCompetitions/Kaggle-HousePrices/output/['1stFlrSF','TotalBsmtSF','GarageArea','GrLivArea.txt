@@ -1,0 +1,1 @@
+['1stFlrSF','TotalBsmtSF','GarageArea','GrLivArea'

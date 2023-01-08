@@ -1,0 +1,1 @@
+missing_vars= ['PoolQC','MiscFeature','Alley', 'F

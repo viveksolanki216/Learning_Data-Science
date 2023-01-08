@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1576236457650.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AE237070",
+    "lastKnownWriteTime" : 1577364167,
+    "last_content_update" : 1577701924802,
+    "path" : "~/Documents/WorkSpace/Books-Practical-Codes/Applied-Predictive-Modelling/Chapter1.R",
+    "project_path" : "Chapter1.R",
+    "properties" : {
+        "cursorPosition" : "115,6",
+        "scrollLine" : "96",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
