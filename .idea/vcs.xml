@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/OnlineCompetitions/Kaggle-BikeSharingDemand" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Practicals/MNIST-Digit-Classifiers" vcs="Git" />
   </component>
 </project>
